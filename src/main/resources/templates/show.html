@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据展示页面</title>
+</head>
+<body>
+
+<table>
+    <tr >
+        <th>id</th>
+        <th>openid</th>
+        <th>nickname</th>
+        <th>sex</th>
+        <th>city</th>
+        <th>country</th>
+        <th>province</th>
+        <th>headimgurl</th>
+        <th>subscribe</th>
+        <th>language</th>
+        <th>remark</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="item:${list}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.openid}"></td>
+        <td th:text="${item.nickname}"></td>
+        <td th:text="${item.sex}"></td>
+        <td th:text="${item.city}"></td>
+        <td th:text="${item.country}"></td>
+        <td th:text="${item.province}"></td>
+        <td th:text="${item.headimgurl}"></td>
+        <td th:text="${item.subscribe}"></td>
+        <td th:text="${item.language}"></td>
+        <td th:text="${item.remark}"></td>
+        <td><a>查看</a> <a>修改</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -11,4 +11,5 @@ public class PageController {
     public String Page(@PathVariable String page) {
         return page;
     }
+
 }
