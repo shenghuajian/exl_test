@@ -1,6 +1,8 @@
 package com.shj.service;
 
 import com.shj.entity.Person;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -55,4 +57,10 @@ public interface PersonService {
     boolean deleteById(Integer id);
 
     List<Person> queryAll();
+
+    int updateRemarkById(String state,Integer id);
+
+    int deleteByIds(String[] ids);
+
+    List<Person> queryBySearch(String nickname, String remark);
 }

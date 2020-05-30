@@ -46,7 +46,7 @@
                 and openid = #{openid}
             </if>
             <if test="nickname != null and nickname != ''">
-                and nickname = #{nickname}
+                and nickname LIKE CONCAT('%',#{nickname},'%')
             </if>
             <if test="sex != null">
                 and sex = #{sex}
@@ -136,4 +136,11 @@
             (#{item.id},#{item.openid},#{item.nickname},#{item.sex},#{item.city},#{item.country},#{item.province},#{item.headimgurl},#{item.subscribe},#{item.language},#{item.remark})
         </foreach>
     </insert>
+    <delete id="deleteByIds">
+        DELETE FROM person WHERE id in
+        <foreach collection="array" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </delete>
+
 </mapper>

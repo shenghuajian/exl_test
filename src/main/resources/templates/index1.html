@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="Shortcut Icon" href="/icon/favicon.ico" th:href="@{/icon/favicon.ico}">
+    <link rel="Bookmark" href="/icon/favicon.ico" th:href="@{/icon/favicon.ico}" >
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body>
+    <form action="/person/fileUp" method="post" enctype="multipart/form-data">
+        <input name="file" type="file"/>
+        <button>确定</button>
+    </form>
+    <a href="/person/fileDown" >下载</a>
+
+</body>
+</html>

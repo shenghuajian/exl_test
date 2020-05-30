@@ -85,4 +85,22 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> queryAll() {
         return personDao.queryAll(new Person());
     }
+
+    @Override
+    public int updateRemarkById(String state, Integer id) {
+        return personDao.updateRemarkById(state,id);
+    }
+
+    @Override
+    public int deleteByIds(String[] ids) {
+        return personDao.deleteByIds(ids);
+    }
+
+    @Override
+    public List<Person> queryBySearch(String nickname, String remark) {
+        Person person = new Person();
+        person.setNickname(nickname).setRemark(remark);
+
+        return personDao.queryAll(person);
+    }
 }

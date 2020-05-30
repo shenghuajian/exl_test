@@ -4,6 +4,7 @@ import com.shj.entity.Person;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 /**
  * (Person)表数据库访问层
@@ -65,4 +66,10 @@ public interface PersonDao {
     int deleteById(Integer id);
 
     int insertList(List<Person> list);
+
+    @Update("UPDATE person SET remark=#{state} WHERE id =#{id}")
+    int updateRemarkById(@Param("state") String state,@Param("id") Integer id);
+
+
+    int deleteByIds(String[] ids);
 }
