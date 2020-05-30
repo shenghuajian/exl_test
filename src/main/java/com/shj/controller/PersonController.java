@@ -96,4 +96,12 @@ public class PersonController {
 
         return "list";
     }
+
+    @RequestMapping("delete")
+    @ResponseBody
+    public void   delete(@Param("remark") int id) {
+
+        boolean b = personService.deleteById(id);
+
+    }
 }
